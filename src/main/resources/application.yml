@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: zuul-api-gateway-service
+
+server:
+  port: 8000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
+zuul:
+  prefix: /api
+  routes:
+    retrieve-backdrop-service:
+      path: /backdrop-service/**
+      url: http://retrieve-backdrop-service
+    retrieve-cast-service:
+      path: /cast-service/**
+      url: http://retrieve-cast-service
+    retrieve-credit-service:
+      path: /credit-service/**
+      url: http://credit-service
