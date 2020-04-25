@@ -31,9 +31,9 @@ build/
 .vscode/
 
 ### Maven ###
-#.mvn/
-#mvnw
-#mvnw.cmd
+.mvn/
+mvnw
+mvnw.cmd
 
 ### Mac Cache ###
 .DS_Store
