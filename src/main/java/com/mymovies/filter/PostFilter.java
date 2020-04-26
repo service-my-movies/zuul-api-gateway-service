@@ -9,8 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class PostFilter extends ZuulFilter {
-	
-	Logger log = LoggerFactory.getLogger(this.getClass());
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(PostFilter.class);
 
     @Override
     public String filterType() {
@@ -34,9 +34,9 @@ public class PostFilter extends ZuulFilter {
 
         response.setStatus(400);
 
-        log.info("Inside Post Filter");
-        
-        log.info(" CODE HTTP {} ", response.getStatus());
+        LOGGER.info("Inside Post Filter");
+
+        LOGGER.info(" CODE HTTP {} ", response.getStatus());
         
         return null;
     }

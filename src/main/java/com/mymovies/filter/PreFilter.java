@@ -9,8 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class PreFilter extends ZuulFilter {
-	
-	Logger log = LoggerFactory.getLogger(this.getClass());
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(PreFilter.class);
 
     @Override
     public String filterType() {
@@ -31,8 +31,8 @@ public class PreFilter extends ZuulFilter {
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-        log.info("Inside Pre Filter");
-        log.info(
+        LOGGER.info("Inside Pre Filter");
+        LOGGER.info(
                 "Request Method : " + request.getMethod() + " Request URL : " + request.getRequestURL().toString());
         return null;
     }

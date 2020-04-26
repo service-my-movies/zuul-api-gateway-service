@@ -6,8 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ErrorFilter extends ZuulFilter {
-	
-	Logger log = LoggerFactory.getLogger(this.getClass());
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ErrorFilter.class);
 
     @Override
     public String filterType() {
@@ -26,7 +26,7 @@ public class ErrorFilter extends ZuulFilter {
 
     @Override
     public Object run() {
-    	log.info("Inside Error Filter");
+    	LOGGER.info("Inside Error Filter");
         return null;
     }
 }

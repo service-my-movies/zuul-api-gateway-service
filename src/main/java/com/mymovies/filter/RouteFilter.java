@@ -6,8 +6,8 @@ import org.slf4j.LoggerFactory;
 import com.netflix.zuul.ZuulFilter;
 
 public class RouteFilter extends ZuulFilter {
-	
-	Logger log = LoggerFactory.getLogger(this.getClass());
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(RouteFilter.class);
 
     @Override
     public String filterType() {
@@ -26,7 +26,7 @@ public class RouteFilter extends ZuulFilter {
 
     @Override
     public Object run() {
-    	log.info("Inside Route Filter");
+    	LOGGER.info("Inside Route Filter");
         return null;
     }
 }
