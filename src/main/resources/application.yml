@@ -1,53 +1,10 @@
 spring:
   application:
     name: zuul-api-gateway-service
+  cloud:
+    config:
+      env: default # optional
+      label: master # optional
+      uri: ${CONFIG_SERVER:http://localhost:8888} # optional
 
-server:
-  port: 8000
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-
-
-zuul:
-  prefix: /api
-  routes:
-    retrieve-backdrop-service:
-      path: /backdrop-service/**
-      url: http://retrieve-backdrop-service
-    retrieve-cast-service:
-      path: /cast-service/**
-      url: http://retrieve-cast-service
-    retrieve-credit-service:
-      path: /credit-service/**
-      url: http://retrieve-credit-service
-    retrieve-crew-service:
-      path: /crew-service/**
-      url: http://retrieve-crew-service
-    retrieve-genre-service:
-      path: /genre-service/**
-      url: http://retrieve-genre-service
-    retrieve-image-service:
-      path: /image-service/**
-      url: http://retrieve-image-service
-    retrieve-keyword-service:
-      path: /keyword-service/**
-      url: http://retrieve-keyword-service
-    retrieve-keywords-service:
-      path: /keywords-service/**
-      url: http://retrieve-keywords-service
-    retrieve-list-genres-available-service:
-      path: /list-genres-available-service/**
-      url: http://retrieve-list-genres-available-service
-    retrieve-movie-service:
-      path: /movie-service/**
-      url: http://retrieve-movie-service
-    discover-service:
-      path: /discover-service/**
-      url: http://discover-service
-    home-page-test-service:
-      path: /home-page-test-service/**
-      url: http://home-page-test-service
       

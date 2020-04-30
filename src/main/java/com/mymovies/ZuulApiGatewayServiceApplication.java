@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 
@@ -16,6 +17,7 @@ import com.mymovies.filter.RouteFilter;
 @SpringBootApplication
 @EnableZuulProxy
 @EnableDiscoveryClient
+@RefreshScope
 public class ZuulApiGatewayServiceApplication {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ZuulApiGatewayServiceApplication.class);
